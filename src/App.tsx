@@ -6,7 +6,9 @@ import { Container,Title,Todo } from "./App.styled";
 import { IItem } from "./types/todo";
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState<IItem[]>([]);
+  const [todos, setTodos] = useState<IItem[]>(
+     JSON.parse(localStorage.getItem("todos") || "")
+);
   // JSON.parse(localStorage.getItem("todos") || "")
   
   useEffect(() => {
