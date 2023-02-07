@@ -9,7 +9,6 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<IItem[]>(
 JSON.parse(localStorage.getItem("todos") || ""))
   ;
-// JSON.parse(localStorage.getItem("todos") || "")
   useEffect(() => {
     window.localStorage.setItem("todos", JSON.stringify(todos));
   });
