@@ -14,6 +14,7 @@ const AddTodo: React.FC<IProps> = (props) => {
     titleTodo({
       title: e.target.value,
     });
+
   };
 
   const submitHandler = (e: React.FormEvent) => {
@@ -22,12 +23,16 @@ const AddTodo: React.FC<IProps> = (props) => {
       return;
     }
     props.onAddTodo(todo as IItem);
+    
   };
+
+
+
   return (
     <Form onSubmit={submitHandler}>
       <Input type="text" id="add-todo" onChange={titleHandler} placeholder="add task" />
 
-      <Button type="submit">Add</Button>
+      <Button type="submit" >Add</Button>
     </Form>
   );
 };
